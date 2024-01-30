@@ -1,0 +1,21 @@
+.nav {
+  background-color: var(--primary-color) !important;
+  min-height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  svg {
+    fill: var(--secondary-color)
+  }
+
+  a {
+    color: var(--secondary-color) !important;
+  }
+
+  &__links {
+    display: flex;
+    gap: 2rem;
+  }
+}
