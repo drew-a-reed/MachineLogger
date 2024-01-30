@@ -4,7 +4,6 @@
     <tr>
       <th scope="col">Machine ID#</th>
       <th scope="col">Machine Name</th>
-      <th scope="col">Components</th>
       <th scope="col">Actions</th>
     </tr>
   </thead>
@@ -12,11 +11,6 @@
     <tr *ngFor="let machine of machines">
       <td>{{ machine.id }}</td>
       <td>{{ machine.name }}</td>
-      <td>
-        <ul>
-          <li *ngFor="let component of machine.components">{{ component }}</li>
-        </ul>
-      </td>
       <td>
         <a class="nav__links__link" [routerLink]="'/machine/' + machine.id">Details</a>
         <button class="nav__links__link">Delete</button>

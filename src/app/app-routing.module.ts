@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MachinesComponent } from './components/machines/machines.component';
 import { MachineComponent } from './components/machine/machine.component';
+import { AddMachineComponent } from './components/add-machine/add-machine.component';
 
 const routes: Routes = [
   {
@@ -9,12 +10,12 @@ const routes: Routes = [
     component: MachinesComponent
   },
   {
-    path: 'allMachines',
+    path: 'machines',
     component: MachinesComponent
   },
   {
-    path: 'machine/:id',
-    component: MachineComponent
+    path: 'machines/add',
+    component: AddMachineComponent
   }
 ];
 

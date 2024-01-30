@@ -1,32 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Machine } from 'src/app/models/machine.model';
+import { MachinesService } from 'src/app/services/machines.service';
 
 @Component({
   selector: 'app-machines',
   templateUrl: './machines.component.html',
   styleUrls: ['./machines.component.scss']
 })
-export class MachinesComponent {
-  machines: Machine[] = [
-    {
-      id: '1A',
-      name: 'Machine1A',
-      components: ['Component1', 'Component2', 'Component1A']
-    },
-    {
-      id: '2A',
-      name: 'Machine2A',
-      components: ['Component1', 'Component2', 'Component2A']
-    },
-    {
-      id: '1B',
-      name: 'Machine1B',
-      components: ['Component1', 'Component2', 'Component1B']
-    },
-    {
-      id: '2B',
-      name: 'Machine2B',
-      components: ['Component1', 'Component2', 'Component2B']
-    }
-  ];
+export class MachinesComponent implements OnInit {
+  machines: Machine[] = [];
+
+  constructor(private machinesService : MachinesService, private router: Router){}
+
+  ngOnInit(): void {
+    this.machinesService.getAllMachines()
+      .subscribe({
+        next: (machines) => {
+          this.machines = machines;
+        },
+        error: (response) => {
+          console.log(response);
+        }
+      });
+  }
+
 }
