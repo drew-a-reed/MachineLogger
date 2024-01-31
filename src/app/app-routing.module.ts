@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MachinesComponent } from './components/machines/machines.component';
 import { MachineComponent } from './components/machine/machine.component';
 import { AddMachineComponent } from './components/add-machine/add-machine.component';
+import { EditMachineComponent } from './components/edit-machine/edit-machine.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'machines/add',
     component: AddMachineComponent
+  },
+  {
+    path: 'machines/edit/:id',
+    component: EditMachineComponent
   }
 ];
 

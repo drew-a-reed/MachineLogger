@@ -25,4 +25,17 @@ export class MachinesComponent implements OnInit {
       });
   }
 
+  deleteMachine(id: string) {
+    this.machinesService.deleteMachine(id)
+      .subscribe({
+        next: (response) => {
+          let currentUrl = this.router.url;
+          this.router.navigateByUrl('/', {skipLocationChange: true})
+          .then(() => {
+            this.router.navigate([currentUrl]);
+          });
+        }
+      });
+  }
+
 }

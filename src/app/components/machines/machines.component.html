@@ -4,7 +4,8 @@
     <tr>
       <th scope="col">Machine ID#</th>
       <th scope="col">Machine Name</th>
-      <th scope="col">Actions</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -12,8 +13,10 @@
       <td>{{ machine.id }}</td>
       <td>{{ machine.name }}</td>
       <td>
-        <a class="nav__links__link" [routerLink]="'/machine/' + machine.id">Details</a>
-        <button class="nav__links__link">Delete</button>
+        <a class="nav__links__link" [routerLink]="['/machines', 'edit', machine.id]">Edit</a>
+      </td>
+      <td>
+        <a class="nav__links__link" [routerLink]="[]" (click)="deleteMachine(machine.id)">Delete</a>
       </td>
     </tr>
   </tbody>

@@ -1,0 +1,14 @@
+<h1>Edit Machine</h1>
+
+<form #form="ngForm" (ngSubmit)="updateMachine()">
+  <div class="mb-3">
+    <p>Machine ID</p>
+    <p>{{updatedMachine.id}}</p>
+  </div>
+  <div class="mb-3">
+    <label for="machineName" class="form-label">Machine Name</label>
+    <input type="text" class="form-control" id="machineName" name="machineName" aria-describedby="machineName" [(ngModel)]="updatedMachine.name">
+    <div id="machineName" class="form-text">Enter the name of the machine.</div>
+  </div>
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>

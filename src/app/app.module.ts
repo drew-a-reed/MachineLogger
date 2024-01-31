@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { MachinesComponent } from './components/machines/machines.component';
 import { MachineComponent } from './components/machine/machine.component';
 import { AddMachineComponent } from './components/add-machine/add-machine.component';
+import { EditMachineComponent } from './components/edit-machine/edit-machine.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { AddMachineComponent } from './components/add-machine/add-machine.compon
     MachinesComponent,
     MachineComponent,
     AddMachineComponent,
+    EditMachineComponent,
   ],
   imports: [
     BrowserModule,

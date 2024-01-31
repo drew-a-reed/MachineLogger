@@ -23,4 +23,16 @@ export class MachinesService {
     );
   }
 
+  getMachine(id: string): Observable<Machine> {
+    return this.http.get<Machine>(this.baseApiUrl + '/api/machines/' + id);
+  }
+
+  updateMachine(id: string, updatedMachine: Machine) : Observable<Machine>{
+    return this.http.put<Machine>(this.baseApiUrl + '/api/machines/' + id, updatedMachine);
+  }
+
+  deleteMachine(id: string): Observable<Machine> {
+    return this.http.delete<Machine>(this.baseApiUrl + '/api/machines/' + id);
+  }
+
 }
